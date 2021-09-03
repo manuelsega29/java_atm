@@ -16,6 +16,7 @@ public class Cajero{
           while(usuario==true){ //usuario
                       
           do{
+              System.out.println("*********************************** ");
               System.out.println("  BANCO BISA ");
               System.out.println("Menú de opciones, elija una por favor: ");
               System.out.println("1. Ver saldo. ");
@@ -24,6 +25,7 @@ public class Cajero{
               System.out.println("4. Salir. ");
               System.out.println("Ingrese opción correcta= ");
               n = input.nextInt();
+              System.out.println("*********************************** \n ");
           }while( n >= 5);
           
           cuentas1 = cli.getCuentas();
@@ -31,6 +33,7 @@ public class Cajero{
           
           switch(n){ //////
               case 1:
+                  System.out.println("*********************************** ");
                   System.out.println("Ingrese de cual cuenta requiere ver su información ");
                   do{
                       System.out.println("Usted tienen  "+y+" cuentas, escoja una=");
@@ -38,49 +41,68 @@ public class Cajero{
                   }while(x>y);
                   x=x-1;
                   System.out.println("El saldo de la cuenta es "+cuentas1.get(x).MostrarSaldo()+" en "+cuentas1.get(x).getMoneda()+" de tipo "+cuentas1.get(x).getTipo()+"\n");
+                  System.out.println("***********************************\n");
                   break;
               case 2:
+                  System.out.println("*********************************** ");
                   System.out.println("Sus cuentas son:");
                   for(i=0;i<y;i++){
-                      System.out.print((i+1)+". Tipo"+cuentas1.get(i).getTipo()+" con saldo de "+cuentas1.get(i).MostrarSaldo()+" moneda "+cuentas1.get(i).getMoneda()+"\n");
+                      System.out.print((i+1)+". Tipo "+cuentas1.get(i).getTipo()+" con saldo de "+cuentas1.get(i).MostrarSaldo()+" moneda "+cuentas1.get(i).getMoneda()+"\n");
                   }
                   System.out.println("\nIngrese de cual cuenta quiere retirar(Si quiere volver al menu digite -1): ");
                   x = input.nextInt();
                   if(x==-1){
                       break;
                   }else{
-                    x=x-1;
-                    System.out.println("Ingrese el monto: ");
-                    monto = input.nextDouble();
-                    if((cuentas1.get(x).retirar(monto)) == false){
-                        System.out.println("El valor ingrsado fue erróneo, no se hizo ninguna operació\n");
-                    }else{
-                        System.out.println(cuentas1.get(x).retirar(monto)+"\n");
+                     if(x>y || x<-1){
+                         System.out.println("Usted seleccionó una cuenta que no existe \n \n");
+                         break;
+                     }else{
+                           x=x-1;
+                           System.out.println("Ingrese el monto: ");
+                           monto = input.nextDouble();
+                            if((cuentas1.get(x).retirar(monto)) == false){
+                                    System.out.println("El valor ingrsado fue erróneo, no se hizo ninguna operació\n");
+                                    System.out.println("***********************************\n ");
+                            }else{
+                                   System.out.println(cuentas1.get(x).retirar(monto)+"\n");
+                                  System.out.println("*********************************** \n ");
+                             }
+                            break;
+                         
+                        } 
                     }
-                    break;
-                  }
-              case 3:
+                case 3:
+                  System.out.println("*********************************** ");
                   System.out.println("Sus cuentas son:");
                   for(i=0;i<y;i++){
-                      System.out.print((i+1)+". Tipo"+cuentas1.get(i).getTipo()+" con saldo de "+cuentas1.get(i).MostrarSaldo()+" moneda "+cuentas1.get(i).getMoneda()+"\n");
+                      System.out.print((i+1)+". Tipo "+cuentas1.get(i).getTipo()+" con saldo de "+cuentas1.get(i).MostrarSaldo()+" moneda "+cuentas1.get(i).getMoneda()+"\n");
                   }
                   System.out.println("\nIngrese a cual cuenta quiere abonar(Si quiere volver al menu digite -1): ");
                   x = input.nextInt();
                   if(x==-1){
                       break;
                   }else{
-                     x=x-1;
-                  System.out.println("Ingrese el monto: ");
-                  monto = input.nextDouble();
-                  if((cuentas1.get(x).depositar(monto)) == false){
-                        System.out.println("El valor ingrsado fue erróneo, no se hizo ninguna operació\n");
-                    }else{
-                        System.out.println(cuentas1.get(x).depositar(monto)+"\n");
-                    }
-                  break; 
+                      if(x>y || x<-1){
+                         System.out.println("Usted seleccionó una cuenta que no existe \n\n");
+                         break;
+                      }else{
+                            x=x-1;
+                            System.out.println("Ingrese el monto: ");
+                            monto = input.nextDouble();
+                            if((cuentas1.get(x).depositar(monto)) == false){
+                            System.out.println("El valor ingrsado fue erróneo, no se hizo ninguna operació\n");
+                            System.out.println("***********************************  \n");
+                            }else{
+                                System.out.println(cuentas1.get(x).depositar(monto)+"\n");
+                                System.out.println("********************************** * \n ");
+                            }
+                        break;   
+                     }
                   }
-              case 4:
-                  System.out.println("   GRACIAS POR SU PREFERENCIA ;)!!! ");
+               case 4:
+                  System.out.println("------/////////------//////------- ");
+                  System.out.println("   GRACIAS POR SU PREFERENCIA ;)  !!!!! ");
                   usuario=false;
                   break;
           } //////

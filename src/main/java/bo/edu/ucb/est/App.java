@@ -48,6 +48,7 @@ public class App
                 System.out.println("PIN O CÓDIGO DE CLIENTE INCORRECTOS");
             }else{
               System.out.println("Bienvenido al BANCO BISA");
+              System.out.println("--------------------------");
               Cajero.ConectionAndMenu(bisa.buscarClientePorCodigo(codC, Pin));
               ipconfi=true;
             } 
