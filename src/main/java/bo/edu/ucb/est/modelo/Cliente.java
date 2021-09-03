@@ -1,23 +1,16 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package bo.edu.ucb.est.modelo;
 
 import java.util.List;
 import java.util.ArrayList;
 
-/**
- *
- * @author ecampohermoso
- */
+
 public class Cliente {
     private String nombre;
     private String codigoCliente;
     private String pinSeguridad;
     private List<Cuenta> cuentas;
-    
+        
     public Cliente(String nombre, String codigoCliente, String pinSeguridad) {
         this.nombre = nombre;
         this.codigoCliente = codigoCliente;
@@ -55,6 +48,8 @@ public class Cliente {
     public List<Cuenta> getCuentas() {
         return cuentas;
     }
+    
+    
 
     public void setCuentas(List<Cuenta> cuentas) {
         this.cuentas = cuentas;

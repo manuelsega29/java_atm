@@ -1,14 +1,9 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
+// ME HACE LAS UNCIONES DE DPOSITAR, RETIRAR Y MOSTRAR SALDO
+
 package bo.edu.ucb.est.modelo;
 
-/**
- *
- * @author ecampohermoso
- */
+
 public class Cuenta {
     private String moneda;
     private String tipo;
@@ -19,7 +14,11 @@ public class Cuenta {
         this.tipo = tipo;
         this.saldo = saldoInicial;
     }
-
+    
+   public double MostrarSaldo(){
+        return saldo;
+    } 
+    
     public boolean retirar(double monto) {
         boolean resultado = false;
         if (monto > 0 && monto <= saldo) { // verifica que no sea negativo, cero o exceda su saldo
