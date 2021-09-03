@@ -26,7 +26,7 @@ public class Cajero{
               System.out.println("Ingrese opción correcta= ");
               n = input.nextInt();
               System.out.println("*********************************** \n ");
-          }while( n >= 5);
+          }while( n >= 5 || n <= 0 );
           
           cuentas1 = cli.getCuentas();
           y = cuentas1.size();
@@ -38,7 +38,7 @@ public class Cajero{
                   do{
                       System.out.println("Usted tienen  "+y+" cuentas, escoja una=");
                       x = input.nextInt();
-                  }while(x>y);
+                  }while(x>y || x<=0);
                   x=x-1;
                   System.out.println("El saldo de la cuenta es "+cuentas1.get(x).MostrarSaldo()+" en "+cuentas1.get(x).getMoneda()+" de tipo "+cuentas1.get(x).getTipo()+"\n");
                   System.out.println("***********************************\n");
